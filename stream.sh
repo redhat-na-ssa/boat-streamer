@@ -24,7 +24,7 @@ sleep 5
 printf "\n\n\n\n"
 echo "VLC is running with PID: ${vlc_pid}"
 for ip in $(ip a | grep inet | awk '{ print $2 }' | awk -F/ '{ print $1 }'); do
-    echo "Server is accessible at http://$ip:8080/video.sdp"
+    echo "Server is accessible at rtsp://$ip:8080/video.sdp"
 done
 
 while kill -0 $vlc_pid &> /dev/null; do
